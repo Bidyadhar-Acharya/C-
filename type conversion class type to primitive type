@@ -1,0 +1,35 @@
+// TYPE-CONVERSION (2) CLASS TYPE TO PRIMITIVE TYPE
+/* CLASS TYPE TO PRIMITIVE TYPE IS DONE WITH THE HELP OF
+   OPERATOR() WHICH WE USED WHILE OPERATOR OVERLOADING  */
+#include<iostream.h>
+#include<conio.h>
+class complex
+{
+private:
+	int a,b;
+public:
+	void getdata(int x, int y)
+	{
+		a=x;
+		b=y;
+	}
+	void showdata()
+	{
+		cout<<endl<<" a= "<<a<<" b= "<<b;
+	}
+	operator int()
+	{
+		return(a);
+	}
+};
+void main()
+{
+	complex c;
+	clrscr();
+	c.getdata(3,4);
+	c.showdata();
+	int x;
+	x=c;
+	cout<<endl<<" x= "<<x;
+	getch();
+}
