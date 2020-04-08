@@ -1,0 +1,63 @@
+// TYPE-CONVERSION (3 a) CLASS TYPE TO CLASS TYPE
+/* CLASS TYPE TO CLASS TYPE CAN BE DONE IN 2 WAYS :-
+   a. BY USING CONSTRUCTOR()
+   b. BY USING CASTING OPERATOR() [ OPERATOR TYPE()]  */
+
+//BY USING CONSTRUCTOR
+#include<iostream.h>
+#include<conio.h>
+class product
+{
+private:
+	int m,n;
+public:
+	void getproduct(int x, int y)
+	{
+		m=x;
+		n=y;
+	}
+	void showproduct()
+	{
+		cout<<endl<<"---PRODUCT CLASS---";
+		cout<<endl<<" m= "<<m<<" n= "<<n;
+	}
+	int getm()
+	{
+		return(m);
+	}
+	int getn()
+	{
+		return(n);
+	}
+
+};
+class item
+{
+private:
+	int a,b;
+public:
+	item() { }  //default constructor
+	item(product p)
+	{
+		a=p.getm();
+		b=p.getn();
+	}
+	void showitem()
+	{
+		cout<<endl<<"---ITEM CLASS---";
+		cout<<endl<<" a= "<<a<<" b= "<<b;
+	}
+};
+
+void main()
+{
+	item i;
+	product p;
+	clrscr();
+	p.getproduct(5,10);
+	p.showproduct();
+	i=p;
+	cout<<endl<<"AGTER TYPE CONVERSION ";
+	i.showitem();
+	getch();
+}
