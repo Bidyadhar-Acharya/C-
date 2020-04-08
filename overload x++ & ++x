@@ -1,0 +1,59 @@
+// PRE INCREMENT AND POST INCREMENT OVERLOADING
+#include<iostream.h>
+#include<conio.h>
+
+class increment
+{
+	int x;
+public:
+
+	void getdata(int a)
+	{
+		x=a;
+	}
+	void showdata()
+	{
+		cout<<"x = "<<x;
+	}
+	increment operator++()    // FOR PRE INNCREMENT
+	{
+		increment temp;
+		temp.x=++x;
+		return(temp);
+	}
+
+	increment operator++(int)    // FOR POST INNCREMENT
+	{
+		increment temp;
+		temp.x=x++;
+		return(temp);
+	}
+};
+void main()
+{
+	clrscr();
+	increment ob1,ob2,ob3;
+	ob1.getdata(5);
+	cout<<endl<<"BEFORE OVERLOADING POST INCREMENT :\n";
+	cout<<endl<<"VALUE OF ob1 ";
+	ob1.showdata();
+
+	ob2=ob1++;
+
+	cout<<endl<<"AFTER OVERLOADING POST INCREMENT :\n";
+	cout<<endl<<"VALUE OF ob1 ";
+	ob1.showdata();
+	cout<<endl<<"VALUE OF ob2 ";
+	ob2.showdata();
+
+	ob3=++ob2;
+	cout<<endl<<"\nAFTER OVERLOADING PRE INCREMENT :\n";
+	cout<<endl<<"VALUE OF ob2 ";
+	ob2.showdata();
+
+	cout<<endl<<"VALUE OF ob3 ";
+	ob3.showdata();
+
+
+	getch();
+}
