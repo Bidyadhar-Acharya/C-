@@ -1,0 +1,43 @@
+//OVERLOADING >= BINARY OPERATOR
+#include<iostream.h>
+#include<conio.h>
+class greaterequal
+{
+	int x;
+public:
+	void getdata(int a)
+	{
+		x=a;
+	}
+	void showdata()
+	{
+		cout<<endl<<"x= "<<x;
+	}
+	int operator>=(greaterequal o2)
+	{
+	    if(x>=o2.x)
+		return 1;
+	    else
+		return 0;
+	}
+};
+void main()
+{
+	greaterequal ob1,ob2;
+	clrscr();
+	ob2.getdata(200);
+	ob1.getdata(500);
+	if(ob2>=ob1)
+	 {
+		cout<<" ob2 is greater with value : ";
+		ob2.showdata();
+	 }
+	 else
+	 {
+		cout<<" ob1 is greater with value : ";
+		ob1.showdata();
+	 }
+	 getch();
+
+}
+
